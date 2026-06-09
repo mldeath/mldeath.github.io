@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>mldeath</title>
+    <script>
+        var gatewayPassword = prompt("enter psswd:");
+        if (gatewayPassword !== "penos") {
+            alert("acces denied");
+            window.location.href = "https://media.tenor.com/HKimNyCwMJkAAAAC/rira-darktriad.gif";
+        }
+    </script>
     <style>
         body {
             background: #121212;
@@ -63,12 +70,6 @@
         .login-btn:hover {
             background: #444;
         }
-        #error-msg {
-            color: #ff4444;
-            font-size: 13px;
-            margin-top: 15px;
-            display: none;
-        }
         #forum-content {
             display: none;
         }
@@ -87,7 +88,6 @@
             <input type="password" id="password" placeholder="Enter password">
         </div>
         <button class="login-btn" onclick="checkLogin()">Login</button>
-        <div id="error-msg">Invalid username or password.</div>
     </div>
 
     <div id="forum-content">
@@ -100,25 +100,4 @@
         </div>
     </div>
 
-    <script>
-        function checkLogin() {
-            var user = document.getElementById("username").value;
-            var pass = document.getElementById("password").value;
-
-            if (user === "admin" && pass === "penos") {
-                document.getElementById("login-panel").style.display = "none";
-                document.getElementById("forum-content").style.display = "block";
-            } else {
-                window.location.href = "https://media.tenor.com/HKimNyCwMJkAAAAC/rira-darktriad.gif";
-            }
-        }
-
-        document.getElementById("password").addEventListener("keyup", function(event) {
-            if (event.key === "Enter") {
-                checkLogin();
-            }
-        });
-    </script>
-
-</body>
-</html>
+    <script
